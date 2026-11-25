@@ -1,0 +1,10 @@
+{
+  "id": "time-bullet-outlines",
+  "name": "Time Bullet for Outlines",
+  "version": "0.0.1",
+  "minAppVersion": "1.8.7",
+  "description": "Cycle between short and long timestamps on list items and inherit the format of the previous sibling.",
+  "author": "pasiooooo",
+  "authorUrl": "https://github.com/pasiooooo",
+  "isDesktopOnly": false
+}

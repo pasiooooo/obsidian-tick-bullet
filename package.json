@@ -1,0 +1,28 @@
+{
+  "name": "obsidian-time-bullet",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "repository": "github:pasiooooo/obsidian-time-bullet",
+  "type": "module",
+  "engines": { "node": ">=22.18.0" },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "lint": "eslint --max-warnings 0 src manifest.json package.json LICENSE",
+    "build": "npm run check && esbuild src/main.ts --bundle --format=cjs --platform=browser --target=es2021 --external:obsidian --external:@codemirror/* --outfile=main.js",
+    "test": "node --test tests/*.test.mjs",
+    "package": "npm run build && pwsh -NoProfile -File scripts/package.ps1"
+  },
+  "devDependencies": {
+    "@codemirror/commands": "^6.8.0",
+    "@codemirror/lang-markdown": "^6.3.0",
+    "@codemirror/language": "^6.10.0",
+    "@codemirror/state": "^6.5.0",
+    "@codemirror/view": "^6.30.0",
+    "esbuild": "^0.25.12",
+    "eslint": "~9.39.4",
+    "eslint-plugin-obsidianmd": "0.6.0",
+    "obsidian": "1.8.7",
+    "typescript": "~5.9.3"
+  }
+}
