@@ -1,9 +1,9 @@
 {
-  "name": "obsidian-time-bullet",
+  "name": "obsidian-tick-bullet",
   "version": "0.0.1",
   "private": true,
   "license": "MIT",
-  "repository": "github:pasiooooo/obsidian-time-bullet",
+  "repository": "github:pasiooooo/obsidian-tick-bullet",
   "type": "module",
   "engines": { "node": ">=22.18.0" },
   "scripts": {

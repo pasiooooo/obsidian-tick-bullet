@@ -6,7 +6,7 @@ if ($id -notmatch '^[a-z]+(?:-[a-z]+)*$' -or $id -match 'obsidian|plugin$') { th
 $dist = Join-Path $root 'dist'
 $folder = Join-Path $dist $id
 $null = New-Item -Path $folder -ItemType Directory -Force
-$zip = Join-Path $dist 'obsidian-time-bullet.zip'
+$zip = Join-Path $dist "obsidian-$id.zip"
 $stream = [IO.File]::Create($zip)
 try {
     $archive = [IO.Compression.ZipArchive]::new($stream, [IO.Compression.ZipArchiveMode]::Create)

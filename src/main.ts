@@ -6,16 +6,16 @@ import { outlineExtension } from './outline.ts';
 import { defaults, patterns, readSettings, TimeFormats } from './time.ts';
 import type { Mode, Settings } from './time.ts';
 
-export default class TimeBullet extends Plugin {
+export default class TickBullet extends Plugin {
   settings: Settings = { ...defaults };
   formats = new TimeFormats(this.settings, moment);
 
   async onload() {
     Object.assign(this.settings, readSettings(await this.loadData()));
     this.registerEditorExtension(outlineExtension(this.formats));
-    this.addSettingTab(new TimeBulletSettings(this));
+    this.addSettingTab(new TickBulletSettings(this));
     const { commands } = labelsFor(getLanguage());
-    this.registerAction('toggle-time-bullet', commands.toggle, 'toggle');
+    this.registerAction('toggle-timestamp', commands.toggle, 'toggle');
     this.registerAction('short-time-at-start', commands.short, 'short');
     this.registerAction('long-time-at-start', commands.long, 'long');
     this.registerAction('short-time-at-end', commands.end, 'end');
@@ -37,10 +37,10 @@ export default class TimeBullet extends Plugin {
   }
 }
 
-class TimeBulletSettings extends PluginSettingTab {
-  private readonly owner: TimeBullet;
+class TickBulletSettings extends PluginSettingTab {
+  private readonly owner: TickBullet;
 
-  constructor(plugin: TimeBullet) {
+  constructor(plugin: TickBullet) {
     super(plugin.app, plugin);
     this.owner = plugin;
   }
